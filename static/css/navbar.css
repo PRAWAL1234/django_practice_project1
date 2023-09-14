@@ -1,0 +1,334 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+header{
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0px 0px 1px black;
+    flex-wrap: wrap;
+   
+}
+header .left-item{
+    display: flex;
+    gap: 15px;
+}
+.left-item a{
+    color: gray;
+    text-decoration: none;
+}
+header .right-item{
+    display: flex;
+    gap: 15px;
+}
+header .right-item a{
+    text-decoration: none;
+    color: gray;
+}
+.container{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    box-shadow: 0px 0px 1px black;
+    position: sticky;
+    top: 0%;
+    z-index: 50;
+    background-color: rgba(255, 255, 255, 0.936);
+}
+.container .child1{
+    width: 200px;
+    height: 80%;
+}
+.container .child1 img{
+    height: 100%;
+    width: 100%;
+    background-size: 100%;
+}
+.container .child2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+.container .child2 .child-02{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 30px;
+    z-index: 1;
+}
+.container .child2 .all-category{
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    flex-direction: column;
+}
+.container .child2 .all-category .head{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgb(0, 81, 255);
+    color: white;
+    height: 33px;
+    width: 180px;
+    border-radius: 5px;
+    justify-content: center;
+   
+}
+.container .child2 ul {
+    width: 175px;
+    display: none;
+    box-shadow: 0px 0px 1px black;
+}
+.container .child2 ul li{
+    list-style: none;
+
+} 
+.container .child2 ul li a{
+    text-decoration: none;
+    color: gray;
+    border:1px solid white ;
+}
+.container .child2 ul li a:hover{
+    border:1px solid black ;
+}
+.cat-ul{
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    gap: 10px;
+}
+.container .store button{
+    width: 65px;
+    height: 35px;
+    border: 1px solid rgb(0, 81, 255);
+    background-color: white;
+    border-radius: 6px;
+    font-size: 15px;
+}
+.container .search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 50%;
+}
+.container .search input[type='text']{
+    width: 88%;
+    height: 100%;
+    border: none;
+    box-shadow: 0px 0px 1px black;
+    border-radius: 5px;
+
+}
+.container .search button{
+    height: 100%;
+    width: 12%;
+    background-color: rgb(0, 81, 255);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.container .search #input{
+    text-align: center;
+    font-size: 1.5vw;
+    color: silver;
+}
+.container .child3{
+    display: flex;
+    width: 350px;
+    justify-content: space-between;
+}
+.container .child3 .widget{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.container .child3 .widget ul{
+    display: flex;
+    gap: 10px;
+}
+.child3 .widget ul li{
+    list-style: none;
+}
+.child3 .widget ul li a{
+    text-decoration: none;
+}
+.child3 .widget ol{
+    display: flex;
+    gap: 15px;
+}
+.child3 .widget ol li{
+    list-style: none;
+}
+.child3 .widget ol li a{
+    font-size: 20px;
+    color: gray;
+    text-decoration: none;
+}
+.child3 .widget .logout button{
+    width: 100px;
+    height: 30px;
+    border: none;
+    font-size: 15px;
+    background-color: rgb(0, 81, 255);
+    color: white;
+    border-radius: 5px;
+}
+.child3 .cart{
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 2px black;
+    border-radius: 50px;
+    color: gray;
+    cursor: pointer;
+    position: relative;
+}
+.container #bar{
+    display: none;
+}
+.container .child3 .widget-die{
+    display: none;
+    gap: 10px;
+}
+.container .child3 .widget-die a{
+    color: gray;
+}
+.container .child3 .widget-die ul{
+    display: flex;
+    gap: 30px;
+}
+.container .child3 .widget-die ul li{
+    list-style: none;
+}
+.container .child3 .widget-die ul li a{
+    text-decoration: none;
+    color: gray;
+}
+.container .child3 .widget-die .cart2{
+    position: relative;
+}
+.container .child3 .widget-die .cart2 .span2{
+    position: absolute;
+    top: -20px;
+    right: -5px;
+    width: 15px;
+    text-align: center;
+    border: 1px solid red;
+    color: white;
+    background-color: red;
+    border-radius: 100%;
+}
+.container #search{
+    display: none;
+}
+.container .child3 .cart .span{
+    border: 1px solid red;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    width: 15px;
+    border-radius:100%;
+    text-align: center;
+}
+@media screen and (max-width:1100px) 
+{
+    .container .child2{
+        display: none;
+    }  
+    .container #bar 
+    {
+        display: inline-block;
+    }
+}
+@media screen and (max-width:1000px) {
+    .container .child3{
+        width: auto;
+    }
+    .container .child3 .widget{
+        display: none;
+    }
+    .container .child3 .widget-die{
+        display: flex !important;
+    }
+    .container .child3 .cart{
+        display: none;
+    }
+    
+}
+@media screen and (max-width:700px) {
+    .container{
+        flex-wrap: wrap;
+        height: auto;
+    }
+    .container .search{
+        display: none;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .container #search{
+        display: inline-block !important;
+    }
+    .container .search #input{
+        font-size: 5vw;
+    }
+    .sea{
+        display: flex !important;
+        order: 2;
+    }
+    .container .search input[type='text']{
+        width: 70%;
+        height: 5vh;
+    }
+    .container .search button{
+        height: 5vh;
+    }
+}
+@media screen and (max-width:515px) 
+{
+    .container .child1{
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 0px 1px black;
+    }   
+    .container .child1 img{
+        width: 250px;
+    }
+    .container .child3{
+        position: relative;
+        bottom: 15px;
+    }
+    .container #search{
+        position: relative;
+        bottom: 12px;
+    }
+    .container .toggle{
+        position: relative;
+        bottom: 12px;
+    }
+
+    
+}
+@media screen and (max-width:235px) {
+    .container .child1 img{
+        width: 180px;
+    }
+    .container{
+        justify-content: space-between;
+    }
+}

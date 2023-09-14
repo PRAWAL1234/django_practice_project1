@@ -1,0 +1,127 @@
+{%extends '../base.html'%}
+{%block 'title'%}
+Store
+{%endblock%}
+
+{%block 'style'%}
+<link rel="stylesheet" href="/static/css/store.css">
+{%endblock%}
+
+{%block 'content'%}
+
+<div class="our-store">
+    <h2>Our Store</h2>
+</div>
+<div class="items">
+    <div class="filter">
+        <div class="category" >
+            <div class="category-name" onclick="f4()">
+                <h4>Category</h4>
+                <i class="fa-solid fa-chevron-down fa-lg"></i>
+            </div>
+            <ul id="ul2">
+                <li><a href="/store">All Product</a></li>
+                {%for i in category%}
+                    <li><a href="/store/category/{{i.category_name}}">{{i.category_name}}</a></li>
+                {%endfor%}
+            </ul>
+        </div>
+        <div class="size" >
+            <div class="size-name" onclick="f5()">
+                <h4>Size</h4>
+                <i class="fa-solid fa-chevron-down fa-lg"></i>
+            </div>
+            <div class="size-butn" id="butn">
+            <button>Small</button>
+            <button>Medium</button>
+            <button>Large</button>
+            <button>xl</button>
+            <button>xxl</button>
+            <button>xxxl</button>
+            </div>
+        </div>
+        <div class="range" >
+            <div class="range-name" onclick="f6()">
+                <h4>Price-range</h4>
+                <i class="fa-solid fa-chevron-down fa-lg"></i>
+            </div>
+            <div class="min" id="min">
+                <div class="max">
+                    <h5>Min</h5>
+                    <h5>Max</h5>
+                </div>
+                <div class="range-butn">
+                    <select name="" id="">
+                        <option value="">$0</option>
+                        <option value="">$10</option>
+                        <option value="">$100</option>
+                        <option value="">$1000</option>
+                    </select>
+                    <select name="" id="">
+                        <option value="">$00</option>
+                        <option value="">$3000</option>
+                        <option value="">$5000</option>
+                        <option value="">$10000</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="items-found">
+        {%if product%}
+        {%for i in product%}
+        <div class="product">
+            <div class="img">
+                <img src="{{i.images.url}}" alt="">
+            </div>
+            <div class="details">
+                <h5>{{i.product_name}}</h5>
+                <h5>{{i.price}}</h5>
+            </div>
+            <form action="/details/{{i.id}}" method="get" class="a">
+                <button type="submit">View Details</button>
+            </form>
+        </div>
+        {%endfor%}
+        {%else%}
+            <h2>NO RESULT FOUND .Please Try Again</h2>
+        {%endif%}
+    </div>
+    {%if product.has_other_pages%}
+    <div class="paginator">
+        {%if product.has_previous%}
+        <a href="/store/?page={{product.previous_page_number}}"><button>Previous</button></a>
+        {%else%}
+        <a href=""><button disabled>Previous</button></a>
+        {%endif%}
+        {%for i in product.paginator.page_range%}
+            {%if product.number == i %}
+            <a href="/store/?page={{i}}" active ><button>{{i}}</button></a>
+            {%else%}
+            <a href="/store/?page={{i}}"><button>{{i}}</button></a>
+            {%endif%}
+        {%endfor%}
+
+        {%if product.has_next%}
+         <a href="/store/?page={{product.next_page_number}}"><button>Next</button></a>   
+        {%else%}
+        <button disabled>Next</button>
+        {%endif%}
+    </div>
+    {%endif%}
+</div>
+<script>
+    function f4() 
+    {
+        document.getElementById('ul2').classList.toggle('ul2')    
+    }
+    function f5() 
+    {
+        document.getElementById('butn').classList.toggle('butn')  
+    }
+    function f6() 
+    {
+        document.getElementById("min").classList.toggle('show')    
+    }
+</script>
+{%endblock%}

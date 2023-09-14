@@ -1,0 +1,60 @@
+{%extends './base.html'%}
+{%block 'title'%}
+Meta Bussines
+{%endblock%}
+
+{%block 'style'%}
+<link rel="stylesheet" href="/static/css/home.css">
+{%endblock%}
+
+{%block 'content'%}
+<div class="parent">
+    <div class="child" id="child">
+        {%for i in image%}
+        <div class="img">
+            <img src="{{i.image.url}}" alt="">
+        </div>
+        {%endfor%}
+        
+    </div>
+    <div class="next"><i class="fa-solid fa-caret-right fa-2xl"></i></div>
+    <div class="pre"><i class="fa-solid fa-caret-left fa-2xl"></i></div>
+</div>
+<div class="popular-head">
+    <h1>POPULAR&nbsp;&nbsp;PRODUCTS</h1>
+    <form action="/store">
+        <button type="submit">See All</button>
+    </form>
+</div>
+<div class="popular">
+    {%for i in product%}
+    <a href="details/{{i.id}}" class="product">
+        <div class="img">
+            <img src="{{i.images.url}}" alt="">
+        </div>
+        <div class="details">
+            <h5>{{i.product_name}}</h5>
+            <h5>$&nbsp;{{i.price}}</h5>
+        </div>
+
+    </a>
+    {%endfor%}
+</div>
+<script>
+    var x=document.getElementById('child')
+    var y=document.getElementsByClassName('img').length-1
+    c=0
+    document.getElementsByClassName("next")[0].addEventListener("click",function(){
+        if(c<y){
+            c=c+1
+            x.style.transform=`translate(-${c*100}vw)`
+        }    
+    })
+    document.getElementsByClassName('pre')[0].addEventListener('click',function () {
+        if(c>0){
+            c=c-1
+            x.style.transform=`translate(-${c*100}vw)`
+        }
+    })
+</script>
+{%endblock%}

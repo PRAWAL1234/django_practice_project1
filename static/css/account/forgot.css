@@ -1,0 +1,56 @@
+.forgot{
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.forgot .box{
+    height: 40vh;
+    width: 500px;
+    box-shadow: 0px 0px 1px black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.forgot .box .row1{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.forgot .box .row2{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 30%;
+    justify-content: space-evenly;
+}
+input[type='email']{
+    height: 5vh;
+    width: 100%;
+    border: none;
+    box-shadow: 0px 0px 1px black;
+    border-radius: 5px;
+}
+.forgot .box .row3{
+    width: 90%;
+    display: flex;
+    gap: 10px;
+}
+.forgot .box .row4{
+    width: 90%;
+}
+.forgot .box .row5{
+    width: 90%;
+    height: 40px;
+}
+.forgot .box .row5 button{
+    width: 100%;
+    height:70%;
+    border: none;
+    background-color: rgb(0, 76, 255);
+    color: white;
+    border-radius: 5px;
+}

@@ -1,0 +1,108 @@
+.product-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(192, 192, 192, 0.194);
+}
+.product-details .product{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px 0px;
+    background-color: white;
+}
+.product-details .product .product-img{
+    width: 49%;
+    box-shadow: 0px 0px 1px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.product-details .product .product-img img{
+    width: 70%;
+    height: 70vh;
+}
+.product-details .product .product-over{
+    width: 50%;
+    box-shadow: 0px 0px 1px black;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.product-details .product .product-over .title{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-bottom:1px dotted black ;
+}
+.product-details .product .product-over .variation{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: column;
+    border-bottom: 1px dotted black;
+}
+.product-details .product .product-over .variation select{
+    width: 100px;
+    height: 5vh;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 1px black;
+}
+.product-details .product .product-over .add{
+    width: 80%;
+}
+.product-details .product .product-over .add button{
+    height: 5vh;
+    width: 140px;
+    border: none;
+    color: white;
+    background-color: rgb(0, 85, 255);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+@media screen and (max-width:1000px) 
+{
+    .product {
+        flex-direction: column;
+        width: 100%;
+    }    
+    .product-details .product .product-img{
+        width: 100%;
+    }
+    .product-details .product .product-img img{
+        width: 50%;
+        height: 60vh;
+    }
+    .product-details .product .product-over{
+        width: 100%;
+    }
+}
+@media screen and (max-width:600px) 
+{
+    .product-details .product .product-img img{
+        min-width: 50vw;
+        height: 50vh;
+        width: 60%;
+    }
+    .product-details .product .product-over{
+        width: 100%;
+    }    
+}
+@media screen and (max-width:415px) {
+    .product-details .product .product-img img{
+        min-width: 60vw;
+        width: 60%;
+    }
+}
+@media screen and (max-width:360px) {
+    .product-details .product .product-img img{
+        width: 100%;
+        height: 40vh;
+    }
+}

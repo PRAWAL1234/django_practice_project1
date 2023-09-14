@@ -1,0 +1,42 @@
+<head>
+    <style>
+        .mssg-container{
+            height:30px ;
+            width: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid red;
+            box-shadow: 0px 0px 2px red;
+            border-radius: 5px;
+        }
+        .close{
+            display: none;
+        }
+        .mssg-container .alert{
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .mssg-container:hover{
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+{% if messages %}
+    {%for i in messages%}
+        <div class="mssg-container" id="mssg">
+            {%if i.tags%}
+                <div class="mssg">{{i.tags}}</div>
+            {%else%}
+            <div class="mssg">{{i}}</div>
+            {%endif%}
+            <div class="alert" onclick="f9()">X</div>
+        </div>
+    {%endfor%}
+{%endif%}
+<script>
+    function f9() {
+        document.getElementById('mssg').classList.toggle('close')
+    }
+</script>

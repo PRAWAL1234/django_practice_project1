@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/bb21a6796a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/css/navbar.css">
+</head>
+<body>
+    <header>
+        <div class="left-item">
+            <a href="/">English</a>
+            <a href="/">USD</a>
+        </div>
+        <div class="right-item">
+            <a href="/">Email <i class="fa-regular fa-envelope fa-lg"></i></a>
+            <a href="/">Call Us <i class="fa-solid fa-phone fa-lg"></i></a>
+        </div>
+    </header>
+    <div class="container">
+        <a href="/" class="child1">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyAhXzK9otINZtTHLVPq7RCIjKKuCk6olzXQ&usqp=CAU" alt="">
+        </a>
+
+        <div class="child2" >
+            <div class="child-02">
+            <div class="all-category" onclick="f2()">
+                <div class="head">
+                    <i class="fa-solid fa-bars fa-lg"></i><h3>All Category</h3><i class="fa-solid fa-caret-down fa-lg"></i>
+                </div>
+            </div>
+            <ul id="ul1">
+                <li><a href="/store">All Category</a></li>
+                {%for i in all_category%}
+                    <li><a href="/store/category/{{i.category_name}}">{{i.category_name}}</a></li>
+                {%endfor%}
+                
+            </ul>
+            </div>
+            
+            <a href="/store" class="store">
+                <button type="submit">Store</button>
+            </a>
+        </div>
+
+
+        <form action="" method="get" class="search" id="sea">
+            <input type="text" name="keyword" placeholder="Search" id="input">
+            <button>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </form>
+        <div class="child3">
+            <div class="widget">
+                {%if user.id is None%}
+                <ul>
+                    <li><h5>Welcome</h6></li>
+                    <li><h5> Guest </h6></li>
+                </ul>
+                <ol>
+                    <li><a href="/login">Login <i class="fa-solid fa-arrow-right-to-bracket fa-lg"></i></a></li>
+                    <li>|</li>
+                    <li><a href="/sign">Sign&nbsp;Up <i class="fa-solid fa-user-plus fa-lg"></i></a></li>
+                </ol>
+                {%else%}
+                <ul>
+                    <li>DashBoard</li>
+                    <li>|</li>
+                    <li>{{user.first_name}}</li>
+                </ul>
+                <form action="/logout" class="logout">
+                    <button>
+                        Logout &nbsp;&nbsp;<i class="fa-solid fa-right-from-bracket fa-xl"></i>
+                    </button>
+                </form>
+                {%endif%}
+            </div>
+            
+            
+            <div class="widget-die">
+                {%if user.id is None%}
+                <ul>
+                    <li><a href="/login"><i class="fa-solid fa-arrow-right-to-bracket fa-lg"></i></a></li>
+                    <li><a href="/sign"><i class="fa-solid fa-user-plus fa-lg"></i></a></li>
+                </ul>
+                {%else%}
+                <ul>
+                    <li><i class="fa-solid fa-circle-user fa-lg"></i>{{user.first_name}}</li>
+                    <li><a href="/logout"><i class="fa-solid fa-right-from-bracket fa-xl"></i></a></li>
+                </ul>
+                {%endif%}
+                {%if user.id is None%}
+                {%else%}
+                <a href="/cart" class="cart2"><i class="fa-solid fa-cart-shopping fa-xl"></i><span class="span2">{{cart_total_item}}</span></a>
+                {%endif%}
+                
+            </div>
+            {% if user.id is None %}
+            
+            {%else%}
+            <a href="/cart" class="cart">
+                <i class="fa-solid fa-cart-shopping fa-xl"></i>
+                <span class="span">{{cart_total_item}}</span>
+            </a>
+            {%endif%}
+        </div>
+        
+            <div id="search">
+                <i class="fa-solid fa-magnifying-glass fa-2xl" onclick="f9()"></i>
+            </div>
+        
+        <div class="toggle">   
+            <i class="fa-solid fa-bars fa-2xl" id="bar" onclick="f1()"></i>
+         </div>
+
+    </div>
+    <script>
+        function f2() 
+        {
+            document.getElementById('ul1').classList.toggle('cat-ul')    
+        }
+        function f9() 
+        {
+            document.getElementById('sea').classList.toggle('sea')    
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+{%extends '../base.html'%}
+{%block 'title'%}
+Sign
+{%endblock%}
+
+{%block 'style'%}
+<link rel="stylesheet" href="/static/css/account/sign.css">
+{%endblock%}
+{%block 'content'%}
+<form action="/sign" method="post" class="sign">
+    {% csrf_token %}
+    <div class="box">
+        <div class="row1">
+            <h1>Sign</h1>
+        </div>
+        <div class="row2">
+            <div class="col1">
+                <div class="first">
+                    <h4>First Name</h4>
+                    {{form.first_name}}
+                </div>
+                <div class="last">
+                    <h4>Last Name</h4>
+                    {{form.last_name}}
+                </div>
+            </div>
+            <div class="col1">
+                <div class="first">
+                    <h4>Email</h4>
+                    {{form.email}}
+                </div>
+                <div class="last">
+                    <h4>Username</h4>
+                    {{form.username}}
+                </div>
+            </div>
+            <div class="col1">
+                <div class="first">
+                    <h4>Password</h4>
+                    {{form.password}}
+                </div>
+                <div class="last">
+                    <h4>Confirm Password</h4>
+                    {{form.Confirm_password}}
+                </div>
+            </div>
+        </div>
+        <div class="row3">
+            <a href="/login" class="login">Login/</a>
+        </div>
+        <div class="row4">
+            {%include 'includes/alert.html'%}
+        </div>
+        <button type="submit" id="botn">Sign</button>
+        
+    </div>
+</form>
+{%endblock%}

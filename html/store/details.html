@@ -1,0 +1,62 @@
+{%extends '../base.html'%}
+{%block 'title'%}
+Product Details
+{%endblock%}
+{%block 'style'%}
+<link rel="stylesheet" href="/static/css/details.css">
+{%endblock%}
+{%block 'content'%}
+<div class="product-details">
+    <div class="product">
+        <div class="product-img">
+            <img src="{{product.images.url}}" alt="">
+        </div>
+        <div class="product-over">
+            <div class="title">
+                <h1>{{product.product_name}}</h1>
+                <div class="reivew">
+                    <i class="fa-sharp fa-solid fa-star fa-lg"></i>
+                    <i class="fa-sharp fa-solid fa-star fa-lg"></i>
+                    <i class="fa-sharp fa-solid fa-star fa-lg"></i>
+                    <i class="fa-sharp fa-solid fa-star fa-lg"></i>
+                    <i class="fa-sharp fa-solid fa-star fa-lg"></i>
+                    <a>Review</a>
+                </div>
+                <h3>$&nbsp;{{product.price}}</h3>
+                <p>{{product.description}}</p>
+            </div>
+            <form action="/cart/add-to-cart/{{product.id}}" method="post" class="variation">
+                {%csrf_token%}
+            <div >
+                <h3>Choose Color</h3>
+                <select name="color" id="">
+                    <option value="">Select Color</option>
+                    {%for i in color%}
+                    <option value="{{i.variation_value}}">{{i.variation_value}}</option>
+                    {%endfor%}
+                </select>
+                <h3>Size</h3>
+                <select name="size" id="">
+                    <option value="">Selcet Size</option>
+                    {%for i in size%}
+                    <option value="{{i.variation_value}}">{{i.variation_value}}</option>
+                    {%endfor%}
+                </select>
+            </div>
+            {% if product.stock == 0 %}
+            <div class="add">
+                <button disabled>Out Of Stock</button>
+            </div>
+            {%else%}
+                
+                
+            <div class="add">
+                <button type="submit">Add-To-Cart</button>
+            </div>
+             {%endif%}
+            </form>
+        
+        </div>
+    </div>
+</div>
+{%endblock%}

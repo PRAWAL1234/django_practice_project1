@@ -1,0 +1,92 @@
+{%extends '../base.html'%}
+{%block 'title'%}
+Cart
+{%endblock%}
+
+{%block 'style'%}
+<link rel="stylesheet" href="/static/css/cart.css">
+{%endblock%}
+{%block 'content'%}
+{%if not all_cart_item%}
+<div class="shoping">
+    <h2>Your Shopping Cart Is Empty</h2>
+</div>
+{%else%}
+    <div class="product-cart">
+      <div class="product-container">
+        <div class="row-1">
+            <div class="col1">
+                <h6>Product</h6>
+            </div>
+            <div class="col2">
+                <h6>Name</h6>
+            </div>
+            <div class="col3">
+                <h6>Quantity</h6>
+            </div>
+            <div class="col4">
+                <h6>Price</h6>
+            </div>
+            <div class="col5">
+                <h6>Remove</h6>
+            </div>
+        </div>
+        {% for i in all_cart_item %}
+        <div class="row-2">
+            <div class="col-1">
+                <img src="{{i.product.images.url}}" alt="">
+            </div>
+            <div class="col-2">
+                <h4>{{i.product.product_name}}</h4>
+                
+                {%for z in i.variation.all %}
+                <p>{{z.variation_category}} : {{z.variation_value}}</p>
+                
+                {%endfor%}
+            </div>
+            <div class="col-3">
+                <div class="butn-group">
+                    <a href="/cart/remove-to-cartitem/{{i.product.id}}"class="button">-</a>
+                    <h3 class="h3">{{i.product.quantity}}</h3>
+                    <a href="/cart/add-to-cart/{{i.product.id}}" class="button">+</a>
+                </div>
+            </div>
+            <div class="col-4">
+                <h2>${{i.product.price}}</h2>
+                <p>Each:${{i.product.price}}</p>
+            </div>
+            <div class="col-5">
+                <a href="/remove/{{i.product.id}}" class="Remove"><button>Remove</button></a>
+            </div>
+        </div>
+        {%endfor%}
+      </div>  
+        <div class="total">
+            <div class="product-price">
+                <div class="total-price">
+                    <h5>Total Price</h6>
+                    <h5>Tax</h6>
+                    <h5>Dilvery Charges</h6>
+                    <h5>Grand-Total</h6>
+                </div>
+                <div class="price">
+                    <h5>${{total}}</h5>
+                    <h5>${{tax}}</h5>
+                    <h5>$50</h5>
+                    <h5>${{grand_total}}</h5>
+                </div>
+            </div>
+            <div class="links">
+                <i class="fa-brands fa-cc-visa fa-2xl"></i>
+                <i class="fa-brands fa-cc-paypal fa-2xl"></i>
+                <i class="fa-brands fa-cc-mastercard fa-2xl"></i>
+                <i class="fa-brands fa-cc-amex fa-2xl"></i>
+            </div>
+            <div class="check">
+                <a href=""><button>Proceed</button></a>
+                <a href="/store"><button>Contiune Shoping</button></a>
+            </div>
+        </div>
+    </div>
+{%endif%}
+{%endblock%}

@@ -1,0 +1,110 @@
+.sign{
+    height:80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sign .box{
+    height: 75vh;
+    width: 50%;
+    box-shadow: 0px 0px 1px black;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    gap: 30px;
+    align-items: center;
+}
+.sign .box .row1{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sign .box .row2{
+    width: 100%;
+    gap: 50px;
+    display: flex;
+    flex-direction: column;
+}   
+.sign .box .row2 .col1{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.box .row2 .col1 .first{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.box .row2 .col1 .last{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+input[type='text'],input[type='email'],input[type='password']{
+    width: 90%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 1px black;
+}
+.sign .box .row3{
+    width: 82%;
+}
+.sign .box .row4{
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sign .box #botn{
+    width: 82%;
+    margin-bottom: 20px;
+    border: none;
+    color: white;
+    background-color: rgb(0, 60, 255);
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font: 20px;
+}
+@media screen and (max-width:1000px) {
+    .sign .box .row2 .col1{
+        justify-content: center;
+        gap: 20px;
+    }
+    .sign{
+        height: 160vh;
+    }
+    .sign .box{
+        height: 140vh;
+    }
+    .sign .box .row2 .col1{
+        gap: 50px;
+    }
+}
+@media screen and (max-width:600px) 
+{
+    .sign .box{
+        width:80% ;
+    }    
+}
+@media screen and (max-width:350px) 
+{
+    .sign .box{
+        width:90% ;
+    }    
+}
+@media screen and (max-width:300px) 
+{
+    .sign .box{
+        width:95% ;
+    }    
+    .sign .box .row2 .col1{
+        justify-content: center;
+    }
+}

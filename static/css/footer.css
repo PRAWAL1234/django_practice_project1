@@ -1,0 +1,86 @@
+footer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 1px black;
+    flex-wrap: wrap;
+}
+footer .about,.contact,.link,.news{
+    height: 35vh;
+    width: 20%;
+    margin: 50px 30px;
+
+}
+footer .about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer .about ul{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+footer .about ul li{
+    list-style: none;
+    font-size: 10px;
+}
+footer .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+footer .contact ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+footer .contact ul li{
+    list-style: none;
+    font-size: 10px;
+}
+footer .link,.news{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+footer .link ul{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+footer .link ul li{
+    list-style: none;
+    font-size: 10px;
+}
+footer .news .email{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer .news .email input[type='text']{
+    width: 100%;
+    height: 20px;
+    border: none;
+    border-bottom: 0.5px dotted black;
+}
+footer .news ul{
+    display: flex;
+    gap: 20px;
+}
+footer .news ul li{
+    list-style: none;
+}
+@media screen and (max-width:850px) {
+    footer .about,.contact,.link,.news{
+        width: 100%;
+    }
+    footer .about img{
+        width: 30vw;
+    }
+}
